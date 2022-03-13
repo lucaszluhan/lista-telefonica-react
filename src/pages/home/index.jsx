@@ -1,18 +1,16 @@
-import { Button, Container } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
   return (
     <React.Fragment>
-      <Container
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-          height: '100%',
-        }}
+      <Box
+        justifyContent="space-evenly"
+        alignItems="center"
+        height="1"
+        display="flex"
+        flexDirection="column"
       >
         <Link
           style={{ width: '100%', textDecoration: 'none' }}
@@ -23,7 +21,7 @@ export const HomePage = () => {
               fontSize: '1.2em',
               borderRadius: 50,
               p: 2,
-              width: '100%',
+              width: 1,
             })}
             variant="contained"
           >
@@ -39,14 +37,14 @@ export const HomePage = () => {
               fontSize: '1.2em',
               borderRadius: 50,
               p: 2,
-              width: '100%',
+              width: 1,
             })}
             variant="contained"
           >
             Contatos
           </Button>
         </Link>
-      </Container>
+      </Box>
     </React.Fragment>
   );
 };
