@@ -22,6 +22,7 @@ export const mainTheme = createTheme({
           width: '100vw',
           overflow: 'hidden',
           overflowY: 'hidden',
+          backgroundColor: purple.A700,
         },
         '#root': {
           overflow: 'hidden',

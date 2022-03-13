@@ -29,7 +29,7 @@ export const MainLayout = ({ children }) => {
         sx={(theme) => ({
           height: '89%',
           backgroundColor: theme.palette.primary.dark,
-          borderRadius: 25,
+          borderRadius: 50,
         })}
       >
         {children}
