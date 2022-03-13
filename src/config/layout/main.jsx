@@ -11,6 +11,7 @@ export const MainLayout = ({ children }) => {
           backgroundColor: theme.palette.primary.main,
           height: '10%',
           borderRadius: 50,
+          boxShadow: 5,
         })}
       >
         <Container sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -18,6 +19,7 @@ export const MainLayout = ({ children }) => {
             sx={(theme) => ({
               color: theme.palette.primary.contrastText,
               fontSize: '2em',
+              borderRadius: 30,
             })}
           >
             Lista Telefônica
@@ -30,6 +32,7 @@ export const MainLayout = ({ children }) => {
           height: '89%',
           backgroundColor: theme.palette.primary.dark,
           borderRadius: 50,
+          boxShadow: 5,
         })}
       >
         {children}
