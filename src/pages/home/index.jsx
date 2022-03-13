@@ -19,14 +19,13 @@ export const HomePage = () => {
           to={'/registro'}
         >
           <Button
-            sx={(theme) => ({
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.primary.contrastText,
+            sx={() => ({
               fontSize: '1.2em',
               borderRadius: 50,
               p: 2,
               width: '100%',
             })}
+            variant="contained"
           >
             Novo Registro
           </Button>
@@ -36,14 +35,13 @@ export const HomePage = () => {
           to={'/contatos'}
         >
           <Button
-            sx={(theme) => ({
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.primary.contrastText,
+            sx={() => ({
               fontSize: '1.2em',
               borderRadius: 50,
               p: 2,
               width: '100%',
             })}
+            variant="contained"
           >
             Contatos
           </Button>
