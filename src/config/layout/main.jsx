@@ -10,7 +10,7 @@ export const MainLayout = ({ children }) => {
           padding: '1em',
           backgroundColor: theme.palette.primary.main,
           height: '10%',
-          borderRadius: 16,
+          borderRadius: 50,
         })}
       >
         <Container sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -29,7 +29,7 @@ export const MainLayout = ({ children }) => {
         sx={(theme) => ({
           height: '89%',
           backgroundColor: theme.palette.primary.dark,
-          borderRadius: 16,
+          borderRadius: 25,
         })}
       >
         {children}
