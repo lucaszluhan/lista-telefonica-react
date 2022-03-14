@@ -1,15 +1,43 @@
 import { Box, TextField, Typography, Button, useTheme } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import ReplyIcon from '@mui/icons-material/Reply';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToContacts } from '../../store/modules/contacts/actions';
+import { useNavigate } from 'react-router-dom';
 
 export const Registro = () => {
   const theme = useTheme();
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleChangeInput = (event, input) => {
+    switch (input) {
+      case 'name':
+        setName(event.target.value);
+        break;
+      case 'phone':
+        setPhone(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleSubmit = () => {
+    dispatch(addToContacts({ name, phone }));
+    navigate('/');
+  };
+
   return (
     <React.Fragment>
       <Box
-        element="form"
+        component="form"
         height="1"
         display="flex"
         flexDirection="column"
@@ -40,19 +68,18 @@ export const Registro = () => {
             id="contactName"
             required
             label="Nome:"
+            onChange={(e) => handleChangeInput(e, 'name')}
             sx={() => ({ width: '80%', m: 3 })}
           />
           <TextField
             id="contactNumber"
             required
             label="Telefone:"
+            onChange={(e) => handleChangeInput(e, 'phone')}
             sx={() => ({ width: '80%', m: 3 })}
           />
         </Box>
         <Box width={1} m={5} display={'flex'} justifyContent={'space-evenly'}>
-          <Button variant="contained" endIcon={<SendIcon />}>
-            Send
-          </Button>
           <Link
             to={'/'}
             style={{
@@ -64,6 +91,13 @@ export const Registro = () => {
               Back
             </Button>
           </Link>
+          <Button
+            variant="contained"
+            endIcon={<SendIcon />}
+            onClick={() => handleSubmit()}
+          >
+            Send
+          </Button>
         </Box>
       </Box>
     </React.Fragment>
