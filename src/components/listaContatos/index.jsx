@@ -8,7 +8,6 @@ export const ListaContatos = ({ data }) => {
     if (data) {
       setContacts(data);
     }
-    console.log(data);
   }, [data]);
 
   return (
