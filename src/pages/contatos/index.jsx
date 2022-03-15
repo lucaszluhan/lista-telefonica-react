@@ -1,9 +1,10 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { ListaContatos } from '../../components/listaContatos';
 
 export const Contatos = () => {
-  const contactsState = useSelector();
+  const contatosState = useSelector((store) => store.contacts);
 
   return (
     <React.Fragment>
@@ -13,7 +14,9 @@ export const Contatos = () => {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-      ></Box>
+      >
+        <ListaContatos data={contatosState} />
+      </Box>
     </React.Fragment>
   );
 };
