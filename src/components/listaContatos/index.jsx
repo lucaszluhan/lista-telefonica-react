@@ -17,7 +17,7 @@ export const ListaContatos = ({ data }) => {
     >
       {contacts.map((contact) => (
         <ListItem
-          key={contact}
+          key={contact.name}
           sx={(theme) => ({
             backgroundColor: theme.palette.primary.main,
             borderRadius: 5,
